@@ -8,4 +8,13 @@ body {
 
 main {
     flex: 1;
+    display: flex;
+    flex-direction: row; /* Default horizontal layout for desktop */
+}
+
+/* Responsive design for smartphones */
+@media (max-width: 768px) {
+    .works_on_smartphone main {
+        flex-direction: column; /* Stack vertically on mobile */
+    }
 }
