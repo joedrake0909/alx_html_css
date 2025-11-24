@@ -1,0 +1,23 @@
+/* 1. Make <body> a flex container with vertical layout */
+body {
+    display: flex;
+    flex-direction: column;
+}
+
+/* 2. Make <main> a flex container with horizontal layout */
+main {
+    display: flex;
+    flex-direction: row;
+    flex: auto; /* allow <main> to grow automatically */
+}
+
+/* 3. Content distribution inside <main> */
+article {
+    flex: 2;          /* takes 2/3 width */
+    overflow-y: auto; /* allow scrolling */
+}
+
+aside {
+    flex: 1;          /* takes 1/3 width */
+    overflow-y: auto; /* allow scrolling */
+}
