@@ -1,0 +1,44 @@
+.bg-image {
+    position: relative;
+    background-image : url('images/Object.png');
+    background-size: crop;
+    background-color: #4CAF50;
+    height: 1,093px;
+    background-size: cover;
+    background-position: center;
+    width: 1,440px;
+}
+
+.card-container{
+    position: relative;
+    display: flex;
+    flex-direction:row;
+    justify-content: space-between;
+    top:1000px;
+    background-color: #4CAF50;
+    padding: 0 150px;
+   
+}
+
+.card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: white;
+}
+
+.year {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.lfp {
+    position: absolute;
+    text-align:center;
+    top: 631px;
+    left: 604px;
+    height: 40px;
+    width: 261px;

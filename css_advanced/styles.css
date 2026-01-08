@@ -1,3 +1,434 @@
-.fas, .far, .fab {
-    font-family: 'Font Awesome 5 Free', 'Font Awesome 5 Brands';
+/* =========================================
+   1. VARIABLES & RESET
+   ========================================= */
+:root {
+    --color-primary: #C271FF;
+    --color-black: #071629;
+    --color-white: #FFFFFF;
+    --color-grey-text: #979797;
+    --color-star-gold: #FFB800;
+    
+    --font-base: 'Source Sans Pro', sans-serif;
+    --font-heading: 'Coiny', cursive;
 }
+
+*, *::before, *::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: var(--font-base);
+    color: var(--color-black);
+    font-size: 16px;
+    line-height: 1.5;
+    background-color: var(--color-white);
+}
+
+a { 
+    text-decoration: none; 
+    color: inherit; 
+    transition: 0.3s;
+}
+
+ul { list-style: none; }
+
+img { max-width: 100%; height: auto; display: block; }
+
+
+/* =========================================
+   2. UTILITIES
+   ========================================= */
+.container {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.text-center { text-align: center; }
+.text-white { color: var(--color-white); }
+.text-primary { color: var(--color-primary); }
+.text-highlight { color: var(--color-primary); }
+.text-grey { color: #d3d3d3; }
+
+.section-spacing { padding: 60px 0; }
+
+.section-title {
+    text-align: center;
+    font-weight: 300;
+    font-size: 32px;
+    margin-bottom: 120px;
+    margin-top: 190px;
+}
+
+.section-title span {
+    font-weight: bold;
+}
+
+.btn {
+    display: inline-block;
+    padding: 14px 30px;
+    border-radius: 30px;
+    font-weight: 700;
+    font-size: 14px;
+    text-transform: uppercase;
+    border: none;
+    cursor: pointer;
+    box-shadow: 0px 5px 15px rgba(0,0,0,0.2);
+    transition: 0.3s;
+}
+
+.btn-primary {
+    background-color: var(--color-primary);
+    color: var(--color-white);
+    margin-top: 100px;
+    
+}
+
+.btn-primary:hover {
+    background-color: #b155f5;
+    transform: translateY(-2px);
+}
+
+
+/* =========================================
+   3. HEADER & HERO
+   ========================================= */
+.header-hero-wrapper {
+    background-color: var(--color-black);
+    background-image: url('images/Object.png');
+    background-size: cover;
+    background-position: center;
+    color: var(--color-white);
+    padding-bottom: 1rem;
+}
+
+/* Nav */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 30px 0;
+}
+
+.nav-menu {
+    display: flex;
+    gap: 40px;
+}
+
+.nav-link {
+    font-weight: bold;
+    font-size: 12px;
+    letter-spacing: 0.5px;
+}
+.nav-link:hover { color: var(--color-primary); }
+
+/* Hero */
+.hero {
+    text-align: center;
+    margin-top: 170px;
+}
+
+.hero-title {
+    font-family: var(--font-heading);
+    font-size: 100px;
+    line-height: 1;
+}
+
+.hero-tags {
+    margin-top: 10px;
+    margin-bottom: 50px;
+    font-weight: 700;
+    font-size: 16px;
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+}
+
+
+/* =========================================
+   4. PROS SECTION
+   ========================================= */
+.pros-section {
+    /* Often overlaps hero slightly if design asks, but we keep it simple stack */
+    margin-top: 60px;
+}
+
+.grid-pros {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 40px;
+}
+
+.pro-card {
+    text-align: center;
+    width: 220px;
+}
+
+.pro-card .avatar {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    margin: 0 auto 20px auto;
+    object-fit: cover;
+}
+
+.pro-card h3 {
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.pro-card p {
+    font-size: 14px;
+    font-style: italic;
+    color: var(--color-black);
+}
+
+
+/* =========================================
+   5. QUOTE SECTION
+   ========================================= */
+.quote-section {
+    background-color: var(--color-primary);
+    color: var(--color-white);
+    padding: 80px 0;
+    margin-top: 80px;
+}
+
+.quote-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 60px;
+}
+
+.quote-avatar {
+    width: 160px;
+    height: 160px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.quote-content {
+    max-width: 600px;
+}
+
+blockquote {
+    font-size: 20px;
+    font-weight: 400;
+    line-height: 1.4;
+    margin-bottom: 20px;
+}
+
+.quote-author {
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+.quote-role {
+    font-style: italic;
+}
+
+
+/* =========================================
+   6. POPULAR TUTORIALS
+   ========================================= */
+.grid-tutorials {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+    justify-content: center;
+}
+
+.tutorial-card {
+    width: 225px;
+}
+
+.thumbnail-wrapper {
+    position: relative;
+    margin-bottom: 15px;
+}
+
+.thumbnail {
+    width: 100%;
+    border-radius: 8px;
+    /* Aspect ratio hack or fixed height */
+    height: 140px; 
+    object-fit: cover;
+}
+
+.play-icon {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 50px;
+    height: 50px;
+    opacity: 0.8;
+}
+.thumbnail-wrapper:hover .play-icon { opacity: 1; }
+
+.tutorial-card h3 {
+    font-weight: bold;
+    font-size: 16px;
+    margin-bottom: 8px;
+}
+
+.tutorial-desc {
+    font-size: 13px;
+    color: #888;
+    margin-bottom: 15px;
+    line-height: 1.4;
+}
+
+.tutorial-meta {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.meta-avatar {
+    width: 30px; /* Small icon */
+    height: 30px;
+    border-radius: 50%;
+    margin-right: 8px;
+}
+
+.author-info {
+    display: flex;
+    align-items: center;
+}
+.author-info h4 {
+    font-size: 12px;
+    color: var(--color-primary);
+}
+
+.rating-info {
+    text-align: right;
+}
+
+.stars {
+    font-size: 10px;
+    margin-bottom: 2px;
+}
+.duration {
+    font-size: 10px;
+    color: #888;
+    display: block;
+}
+
+
+/* =========================================
+   7. MEMBERSHIP SECTION
+   ========================================= */
+.membership-section {
+    background-color: var(--color-black);
+    color: var(--color-white);
+    padding: 80px 0;
+    margin-top: 80px;
+}
+
+.grid-membership {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 40px;
+    margin-bottom: 60px;
+}
+
+.membership-item {
+    text-align: center;
+    width: 200px;
+}
+
+.membership-icon {
+    margin: 0 auto 20px auto;
+    height: 40px;
+}
+
+.membership-item h3 {
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+.membership-item p {
+    font-size: 14px;
+    line-height: 1.6;
+    opacity: 0.8;
+}
+
+
+/* =========================================
+   8. FAQ & FOOTER
+   ========================================= */
+.grid-faq {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.faq-column {
+    width: 45%;
+}
+
+.faq-item {
+    margin-bottom: 30px;
+}
+
+.faq-item h3 {
+    font-weight: bold;
+    margin-bottom: 10px;
+    font-size: 16px;
+}
+
+.faq-item p {
+    font-size: 14px;
+    line-height: 1.6;
+    color: #666;
+}
+
+/* Footer */
+footer {
+    background-color: var(--color-black);
+    color: var(--color-white);
+    padding: 80px 0 40px 0;
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: column; 
+    gap: 30px;
+}
+
+.footer-logo-area {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+.social-icons {
+    display: flex;
+    gap: 20px;
+    font-size: 24px;
+}
+.copyright {
+    opacity: 0.4;
+    font-size: 12px;
+}
+
+/* Updates for moving Pros section into Dark Hero */
+.pros-section .section-title {
+    color: var(--color-white);
+}
+
+.pro-card h3 {
+    color: var(--color-white);
+}
+
+.pro-card p {
+    color: var(--color-white);
+}
+
